@@ -1,20 +1,46 @@
 
 # Technology used
+Java 17,  Spring Boot '3.1.1', JUnit 5 and Gradle 
+that uses dependencies defined in build.gradle for spring boot starter, starter web, spring test, spring validation, 
+jakarta validation, lombok and docker starter.
 
-# How to run the 
+lombok annotation is used for model classes. 
+Validation annotations are used based on the OpenAPI specification defined in api.yml requirements.
+# How to run the app using docker
+Get the project receipt-processor-challenge. 
+The solution jar is at jar/ folder
+Build the docker with spring boot and java and project jar:
+* ```docker build --build-arg JAR_FILE= jar/receipt-processor-challenge-0.0.1-SNAPSHOT.jar -t proj:myapp .```
 
-in ~/workspace/receipt-processor-challenge
-For Gradle, the following command works:
-```docker build --build-arg JAR_FILE=build/libs/receipt-processor-challenge-0.0.1-SNAPSHOT.jar -t proj:myapp .```
-```docker build -f Dockerfile -t proj:myapp . ```
+"." (period) at the end.
+If you use "./gradlew clean build" to build again the newest jar will be at build/libs
 
-to run use 
-```docker run -p 8080:8080 proj:myapp```
-Spring boot application will start and you can use it to test the get or post methods
+![build with docker](/Users/jelena/Desktop/build with docker.png)
 
+to run the app:
+* ```docker run -p 8080:8080 proj:myapp```
 
+![run app with docker](/Users/jelena/Desktop/run app with docker.png)
 
+Spring boot application will start on port you specified above, in this case http://localhost:8080 
+You can test the Get and Post methods  using Postman (or Insomnia) or just with curl command
 
+200 response - post receipt and get id:
+![200 response post receipt and get id](/Users/jelena/Desktop/postman post and get id.png)
+
+400 response for request validation, if some filed is missing:
+![bad request](/Users/jelena/Desktop/postman bad request.png)
+
+200 response - Get points for receipt
+![get points](/Users/jelena/Desktop/get points.png)
+
+404 response - Get points when receipt id is not found
+![receipt id is not found](/Users/jelena/Desktop/Screen Shot 2023-07-10 at 9.31.09 AM.png)
+
+# How to run the app using Spring Boot
+* ./gradlew test - run tests
+* ./gradlew clean build
+* ./gradlew bootRun
 ---
 
 ## Summary of API Specification

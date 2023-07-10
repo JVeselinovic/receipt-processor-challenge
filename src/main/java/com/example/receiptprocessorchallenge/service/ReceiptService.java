@@ -13,6 +13,13 @@ import java.util.UUID;
 @Service
 public class ReceiptService {
     private Map<String, Receipt> receiptMap = new HashMap<>();
+
+    /**
+     * Return a unique generated ID for the receipt
+     * and store the receipt in the map using the generated ID as the key
+     * @param receipt
+     * @return ReceiptResponse
+     */
     public ReceiptResponse processReceipt(Receipt receipt) {
         // Generate a unique ID for the receipt
         String id = UUID.randomUUID().toString();
@@ -23,10 +30,15 @@ public class ReceiptService {
         // Store the receipt in the map using the generated ID as the key
         receiptMap.put(id, receipt);
 
-        // Return the response
         return response;
     }
 
+    /**
+     * Lookup the receipt by ID from the map and calculate the points
+     * based on the receipt rules and create the response object
+     * @param id
+     * @return PointsResponse
+     */
     public PointsResponse getReceiptPoints(String id) {
         // Lookup the receipt by ID from the map
         Receipt receipt = receiptMap.get(id);
@@ -43,6 +55,11 @@ public class ReceiptService {
         return response;
     }
 
+    /**
+     * Calculate pints for the receipt based on requirements
+     * @param receipt
+     * @return int points
+     */
     private int calculatePoints(Receipt receipt) {
         int points = 0;
 

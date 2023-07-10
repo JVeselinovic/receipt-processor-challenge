@@ -12,11 +12,17 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Receipt pojo class that use lombok annotation
+ * and validation annotation based on the OpenAPI
+ * specification in the api.yaml
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Receipt implements Serializable {
+    //all Receipt fields are required
     @NotBlank
     private String retailer;
     @NotBlank
