@@ -6,7 +6,7 @@ jakarta validation, lombok and docker starter.
 
 lombok annotation is used for model classes. 
 Validation annotations are used based on the OpenAPI specification defined in api.yml requirements.
-# How to run the app using docker
+# How to run the app locally using docker
 Get the project receipt-processor-challenge. 
 The solution jar is at jar/ folder
 Build the docker with spring boot and java and project jar:
@@ -38,7 +38,7 @@ You can test the Get and Post methods  using Postman (or Insomnia) or just with 
 404 response - Get points when receipt id is not found
 ![receipt id not found.png](examples%2Fimages%2Freceipt%20id%20not%20found.png)
 
-# How to run the app using Spring Boot
+# How to build, test and run the app using Spring Boot locally
 * ./gradlew test - run tests
 * ./gradlew clean build
 * ./gradlew bootRun
