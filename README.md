@@ -15,27 +15,28 @@ Build the docker with spring boot and java and project jar:
 "." (period) at the end.
 If you use "./gradlew clean build" to build again the newest jar will be at build/libs
 
-![build with docker](/Users/jelena/Desktop/build with docker.png)
+![build with docker.png](examples%2Fimages%2Fbuild%20with%20docker.png)
 
 to run the app:
 * ```docker run -p 8080:8080 proj:myapp```
 
-![run app with docker](/Users/jelena/Desktop/run app with docker.png)
+![run app with docker.png](examples%2Fimages%2Frun%20app%20with%20docker.png)
+
 
 Spring boot application will start on port you specified above, in this case http://localhost:8080 
 You can test the Get and Post methods  using Postman (or Insomnia) or just with curl command
 
 200 response - post receipt and get id:
-![200 response post receipt and get id](/Users/jelena/Desktop/postman post and get id.png)
+![postman post and get id.png](examples%2Fimages%2Fpostman%20post%20and%20get%20id.png)
 
 400 response for request validation, if some filed is missing:
-![bad request](/Users/jelena/Desktop/postman bad request.png)
+![postman bad request.png](examples%2Fimages%2Fpostman%20bad%20request.png)
 
 200 response - Get points for receipt
-![get points](/Users/jelena/Desktop/get points.png)
+![get points.png](examples%2Fimages%2Fget%20points.png)
 
 404 response - Get points when receipt id is not found
-![receipt id is not found](/Users/jelena/Desktop/Screen Shot 2023-07-10 at 9.31.09 AM.png)
+![receipt id not found.png](examples%2Fimages%2Freceipt%20id%20not%20found.png)
 
 # How to run the app using Spring Boot
 * ./gradlew test - run tests
